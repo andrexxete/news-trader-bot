@@ -1,0 +1,64 @@
+{
+  "martes_13": [
+    {
+      "time": "09:00",
+      "event": "Ventas de viviendas de segunda mano",
+      "forecast": "3.95",
+      "previous": "3.98",
+      "unit": "M"
+    }
+  ],
+  "miercoles_14": [
+    {
+      "time": "07:30",
+      "event": "IPC subyacente (Mensual)",
+      "forecast": "0.2",
+      "previous": "0.3",
+      "unit": "%"
+    },
+    {
+      "time": "07:30",
+      "event": "IPC (Mensual)",
+      "forecast": "0.6",
+      "previous": "0.4",
+      "unit": "%"
+    },
+    {
+      "time": "07:30",
+      "event": "IPC (Anual)",
+      "forecast": "3.6",
+      "previous": "3.4",
+      "unit": "%"
+    }
+  ],
+  "jueves_15": [
+    {
+      "time": "07:30",
+      "event": "Ventas minoristas (Mensual)",
+      "forecast": "0.3",
+      "previous": "1.2",
+      "unit": "%"
+    },
+    {
+      "time": "07:30",
+      "event": "IPP (Mensual)",
+      "forecast": "0.5",
+      "previous": "0.4",
+      "unit": "%"
+    },
+    {
+      "time": "07:30",
+      "event": "Philly Fed Manufacturing",
+      "forecast": "26.5",
+      "previous": "37.8",
+      "unit": ""
+    },
+    {
+      "time": "07:30",
+      "event": "Nuevas peticiones de subsidio por desempleo",
+      "forecast": "195",
+      "previous": "197",
+      "unit": "K"
+    }
+  ]
+}
