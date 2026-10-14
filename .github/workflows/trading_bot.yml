@@ -1,0 +1,45 @@
+name: News Trader Bot
+
+on:
+  schedule:
+    - cron: '5 14 * * 2'
+    - cron: '35 12 * * 3'
+    - cron: '35 12 * * 4'
+  workflow_dispatch:
+
+jobs:
+  run-bot:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+    
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.10'
+    
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install requests python-dotenv pandas fredapi
+    
+    - name: Create .env file
+      run: |
+        echo "TELEGRAM_TOKEN=${{ secrets.TELEGRAM_TOKEN }}" > .env
+        echo "TELEGRAM_CHAT_ID=${{ secrets.TELEGRAM_CHAT_ID }}" >> .env
+        echo "FRED_API_KEY=${{ secrets.FRED_API_KEY }}" >> .env
+    
+    - name: Create empty log file
+      run: touch log.txt
+    
+    - name: Run trading bot
+      run: python main.py >> log.txt 2>&1
+    
+    - name: Upload logs
+      if: always()
+      uses: actions/upload-artifact@v4
+      with:
+        name: bot-logs
+        path: log.txt
