@@ -1,107 +1,71 @@
 {
-  "semana": "13-17 Octubre 2026",
+  "semana": "20-24 Octubre 2026",
   "dias": {
     "lunes": {
-      "fecha": "2026-10-12",
+      "fecha": "2026-10-20",
       "noticias": []
     },
     "martes": {
-      "fecha": "2026-10-13",
+      "fecha": "2026-10-21",
       "noticias": [
         {
-          "hora": "09:00",
-          "evento": "Ventas de viviendas de segunda mano",
-          "impacto": "medio",
-          "prevision": "3.95M",
-          "anterior": "3.98M",
-          "tu_analisis": "Si viene bajo, USD se debilita. Oro y EURUSD podrían subir.",
-          "sesgo": "Si dato < previsión → alcista para Oro/EURUSD"
+          "hora": "09:30",
+          "evento": "Inventarios de petróleo crudo de la AIE",
+          "impacto": "alto",
+          "prevision": "",
+          "anterior": "-8.557M",
+          "tu_analisis": "Si los inventarios bajan (número negativo), hay menos oferta de petróleo. Petróleo sube → presión inflacionaria → Oro podría subir como hedge. Si los inventarios suben (número positivo), petróleo baja → menos presión inflacionaria → Oro podría bajar.",
+          "sesgo": "Inventarios negativos → LONG Oro | Inventarios positivos → SHORT Oro"
         }
       ]
     },
     "miercoles": {
-      "fecha": "2026-10-14",
+      "fecha": "2026-10-22",
       "noticias": [
         {
           "hora": "07:30",
-          "evento": "IPC subyacente (Mensual)",
+          "evento": "Nuevas peticiones de subsidio por desempleo",
           "impacto": "alto",
-          "prevision": "0.2%",
-          "anterior": "0.3%",
-          "tu_analisis": "Desaceleración esperada. Si viene bajo, USD débil. Oro sube.",
-          "sesgo": "Si dato < 0.2% → LONG Oro/EURUSD"
-        },
-        {
-          "hora": "07:30",
-          "evento": "IPC (Mensual)",
-          "impacto": "alto",
-          "prevision": "0.6%",
-          "anterior": "0.4%",
-          "tu_analisis": "Aceleración fuerte esperada. Si viene alto, USD fuerte. Oro baja.",
-          "sesgo": "Si dato > 0.6% → SHORT Oro/EURUSD"
-        },
-        {
-          "hora": "07:30",
-          "evento": "IPC (Anual)",
-          "impacto": "alto",
-          "prevision": "3.6%",
-          "anterior": "3.4%",
-          "tu_analisis": "Inflación subiendo. Fed podría endurecer política. USD fuerte.",
-          "sesgo": "Si dato > 3.6% → SHORT Oro/EURUSD"
+          "prevision": "200K",
+          "anterior": "199K",
+          "tu_analisis": "Mercado laboral estable. Si viene alto (>200K), indica debilidad laboral → USD débil → Oro sube. Si viene bajo (<200K), mercado laboral fuerte → USD fuerte → Oro baja.",
+          "sesgo": "Si dato > 200K → LONG Oro/EURUSD | Si dato < 200K → SHORT Oro/EURUSD"
         }
       ]
     },
     "jueves": {
-      "fecha": "2026-10-15",
+      "fecha": "2026-10-23",
       "noticias": [
         {
-          "hora": "07:30",
-          "evento": "Ventas minoristas (Mensual)",
+          "hora": "08:45",
+          "evento": "PMI de servicios (Oct)",
           "impacto": "alto",
-          "prevision": "0.3%",
-          "anterior": "1.2%",
-          "tu_analisis": "Fuerte desaceleración esperada. Economía débil. USD podría bajar.",
-          "sesgo": "Si dato < 0.3% → LONG Oro/EURUSD"
+          "prevision": "58.0",
+          "anterior": "58.8",
+          "tu_analisis": "PMI > 50 = expansión, PMI < 50 = contracción. Si viene bajo (<58), sector servicios se desacelera → economía débil → USD baja → Oro sube. Si viene alto (>58), economía fuerte → USD sube → Oro baja.",
+          "sesgo": "Si dato < 58 → LONG Oro/EURUSD | Si dato > 58 → SHORT Oro/EURUSD"
         },
         {
-          "hora": "07:30",
-          "evento": "IPP (Mensual)",
+          "hora": "08:45",
+          "evento": "PMI manufacturero (Oct)",
           "impacto": "alto",
-          "prevision": "0.5%",
-          "anterior": "0.4%",
-          "tu_analisis": "Precios industriales subiendo. Presión inflacionaria.",
-          "sesgo": "Si dato > 0.5% → SHORT Oro/EURUSD"
-        },
-        {
-          "hora": "07:30",
-          "evento": "Índice manufacturero de la Fed de Filadelfia",
-          "impacto": "alto",
-          "prevision": "26.5",
-          "anterior": "37.8",
-          "tu_analisis": "Caída fuerte en manufactura. Economía en desaceleración.",
-          "sesgo": "Si dato < 26.5 → LONG Oro/EURUSD"
-        },
-        {
-          "hora": "22:30",
-          "evento": "Declaraciones de Warsh, Consejo de Gobierno de la Fed",
-          "impacto": "alto",
-          "prevision": "",
-          "anterior": "",
-          "tu_analisis": "Declaraciones de la Fed pueden mover el mercado. Escuchar tono hawkish/dovish.",
-          "sesgo": "Hawkish → SHORT Oro | Dovish → LONG Oro"
+          "prevision": "55.5",
+          "anterior": "55.9",
+          "tu_analisis": "Manufactura en expansión pero desacelerando. Si viene bajo (<55.5), manufactura débil → economía en desaceleración → USD baja → Oro sube. Si viene alto (>55.5), manufactura fuerte → USD sube → Oro baja.",
+          "sesgo": "Si dato < 55.5 → LONG Oro/EURUSD | Si dato > 55.5 → SHORT Oro/EURUSD"
         }
       ]
     },
     "viernes": {
-      "fecha": "2026-10-16",
+      "fecha": "2026-10-24",
       "noticias": []
     },
     "sabado": {
-      "fecha": "2026-10-17",
+      "fecha": "2026-10-25",
       "noticias": []
     },
     "domingo": {
-      "fecha": "2026-10-18",
+      "fecha": "2026-10-26",
       "noticias": []
     }
   }
