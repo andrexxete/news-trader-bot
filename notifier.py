@@ -7,103 +7,88 @@ class TelegramNotifier:
         self.url = f"https://api.telegram.org/bot{TELEGRAM_TOKEN}/sendMessage"
         self.chat_id = TELEGRAM_CHAT_ID
 
-    def send_test_message(self):
-        """Envía un mensaje de prueba para verificar que Telegram funciona"""
-        message = f"""
- *BOT DE TRADING ACTIVO*
-
-✅ El bot se ejecutó correctamente
-📅 Fecha: {datetime.now().strftime("%Y-%m-%d %H:%M")}
-⏰ Hora de ejecución automática: Miércoles 07:35 AM
-
-Si recibes este mensaje, Telegram funciona correctamente.
-        """
-        
+    def enviar_mensaje(self, texto):
+        """Envía un mensaje genérico a Telegram"""
         payload = {
             'chat_id': self.chat_id,
-            'text': message,
+            'text': texto,
             'parse_mode': 'Markdown'
         }
         
         try:
             response = requests.post(self.url, json=payload, timeout=10)
             if response.status_code == 200:
-                print("✅ Mensaje de prueba enviado a Telegram")
+                print(f"✅ Mensaje enviado")
                 return True
             else:
-                print(f"❌ Error de Telegram: {response.text}")
+                print(f"❌ Error: {response.text}")
                 return False
         except Exception as e:
-            print(f"❌ Fallo de conexión: {e}")
+            print(f"❌ Error de conexión: {e}")
             return False
 
-    def send_signal(self, event_name: str, direction: str, deviation: float, actual: str, forecast: str):
-        """Envía la alerta de trading formateada"""
+    def enviar_resumen_dia(self, semana, dia, fecha, noticias):
+        """Envía el resumen del día a las 07:00 AM"""
+        lista_noticias = ""
+        for n in noticias:
+            impacto_emoji = "" if n.get('impacto') == 'alto' else "🟡"
+            lista_noticias += f"{impacto_emoji} *{n['hora']}* - {n['evento']}\n"
+            lista_noticias += f"   Previsión: {n.get('prevision', 'N/A')} | Anterior: {n.get('anterior', 'N/A')}\n"
+            lista_noticias += f"    {n.get('tu_analisis', '')}\n\n"
         
-        if direction == "LONG":
-            emoji = "🟢"
-            text_dir = "COMPRAR (LONG)"
-        elif direction == "SHORT":
-            emoji = ""
-            text_dir = "VENDER (SHORT)"
-        else:
-            emoji = ""
-            text_dir = "NEUTRAL"
+        mensaje = f"""
+📅 *RESUMEN DEL DÍA*
 
-        message = f"""
-🚨 *ALERTA DE TRADING* 🚨
+*Semana:* {semana}
+*Hoy:* {dia.capitalize()} {fecha}
 
- *Evento:* {event_name}
-{emoji} *Acción:* {text_dir}
- *Desvío:* {deviation}%
+📊 *Noticias importantes:*
 
- *Dato Real:* {actual}
- *Previsión:* {forecast}
+{lista_noticias}
 
- *Activos:* Oro y EURUSD
-️ *Riesgo:* 1% del capital
-⏱️ *Entrar en el cierre de la vela de 5m*
-        """
-
-        payload = {
-            'chat_id': self.chat_id,
-            'text': message,
-            'parse_mode': 'Markdown'
-        }
-
-        try:
-            response = requests.post(self.url, json=payload, timeout=10)
-            if response.status_code == 200:
-                print(f"✅ Mensaje enviado a Telegram: {event_name}")
-                return True
-            else:
-                print(f"❌ Error de Telegram: {response.text}")
-                return False
-        except Exception as e:
-            print(f"❌ Fallo de conexión: {e}")
-            return False
-
-    def send_summary(self, total_eventos: int, senales: int):
-        """Envía un resumen al final de la ejecución"""
-        message = f"""
-📊 *RESUMEN DE EJECUCIÓN*
-
-✅ Bot completado exitosamente
-📅 Eventos analizados: {total_eventos}
-🎯 Señales generadas: {senales}
-⏰ Hora: {datetime.now().strftime("%H:%M")}
-
-{'🔔 Hay señales activas - Revisa los mensajes anteriores' if senales > 0 else '⚪ Sin señales claras hoy - El mercado está en línea con las previsiones'}
+⚠️ *Recuerda:*
+- Esperar confirmación del precio
+- No operar antes de la noticia
+- Gestión de riesgo: 1% del capital
         """
         
-        payload = {
-            'chat_id': self.chat_id,
-            'text': message,
-            'parse_mode': 'Markdown'
-        }
+        return self.enviar_mensaje(mensaje)
+
+    def enviar_alerta_pre_noticia(self, noticia, minutos=30):
+        """Envía alerta 30 minutos antes de la noticia"""
+        evento = noticia.get('evento', '')
+        hora = noticia.get('hora', '')
+        prevision = noticia.get('prevision', 'N/A')
+        anterior = noticia.get('anterior', 'N/A')
+        analisis = noticia.get('tu_analisis', '')
+        sesgo = noticia.get('sesgo', '')
         
-        try:
-            requests.post(self.url, json=payload, timeout=10)
-            print("✅ Resumen enviado a Telegram")
-        except:
-            pass
+        mensaje = f"""
+ *ALERTA: EN {minutos} MINUTOS*
+
+📊 *{evento}*
+⏱️ Hora: {hora}
+
+📈 *Datos:*
+Previsión: {prevision}
+Anterior: {anterior}
+
+💭 *Tu análisis:*
+{analisis}
+
+🎯 *Sesgo:*
+{sesgo}
+
+️ *Qué observar:*
+- Esperar vela de 5m cerrada
+- Confirmar con volumen
+- Respetar niveles clave
+
+ *Abre tu gráfico ahora*
+        """
+        
+        return self.enviar_mensaje(mensaje)
+
+    def enviar_recordatorio_generico(self, mensaje_texto):
+        """Envía un mensaje genérico"""
+        return self.enviar_mensaje(mensaje_texto)
