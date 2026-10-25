@@ -18,6 +18,10 @@ on:
           - resumen
           - alerta
 
+concurrency:
+  group: news-trader-${{ github.event.schedule || github.event.inputs.modo || 'manual' }}
+  cancel-in-progress: false
+
 jobs:
   run-bot:
     runs-on: ubuntu-latest
@@ -40,6 +44,17 @@ jobs:
       run: |
         echo "TELEGRAM_TOKEN=${{ secrets.TELEGRAM_TOKEN }}" > .env
         echo "TELEGRAM_CHAT_ID=${{ secrets.TELEGRAM_CHAT_ID }}" >> .env
+
+    - name: Restore alert and projection history
+      if: ${{ (github.event_name == 'schedule' && github.event.schedule == '*/15 11-20 * * 1-5') || (github.event_name == 'workflow_dispatch' && github.event.inputs.modo == 'alerta') }}
+      uses: actions/cache@v4
+      with:
+        path: |
+          alert_state.json
+          forecast_history.jsonl
+        key: news-trader-state-${{ github.run_id }}
+        restore-keys: |
+          news-trader-state-
     
     - name: Send daily summary
       if: ${{ (github.event_name == 'schedule' && github.event.schedule == '0 12 * * 1-5') || (github.event_name == 'workflow_dispatch' && github.event.inputs.modo == 'resumen') }}
