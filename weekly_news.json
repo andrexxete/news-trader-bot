@@ -1,72 +1,151 @@
 {
-  "semana": "20-24 Octubre 2026",
+  "semana": "26 de octubre - 1 de noviembre de 2026",
+  "zona_horaria": "America/Bogota",
+  "fuente_consenso": "Capturas de Investing.com y Forex Factory compartidas el 25 de octubre de 2026; confirmar cambios antes de operar.",
+  "panorama_semanal": "Semana con volatilidad potencialmente elevada. El principal catalizador es el FOMC del miércoles: las capturas muestran consenso de tasa sin cambio en 4.00%, por lo que el comunicado y la rueda de prensa pueden dominar. El jueves se publican juntos PIB avanzado y PCE subyacente; una sorpresa de crecimiento fuerte junto con inflación alta podría elevar rendimientos y dólar (presión para el oro), mientras datos más suaves con caída de rendimientos reales y dólar podrían apoyar al oro. Si los datos se contradicen, no asumir dirección y esperar confirmación del precio. No hay sesgo direccional previo: priorizar reacción de rendimientos reales de EE. UU., DXY y XAUUSD; evitar entrar antes de los eventos de alto impacto.",
   "dias": {
-    "lunes": {
-      "fecha": "2026-10-20",
-      "noticias": []
-    },
+    "lunes": {"fecha": "2026-10-26", "noticias": []},
     "martes": {
-      "fecha": "2026-10-21",
+      "fecha": "2026-10-27",
       "noticias": [
         {
-          "hora": "09:30",
-          "evento": "Inventarios de petróleo crudo de la AIE",
-          "impacto": "alto",
-          "prevision": "",
-          "anterior": "-8.557M",
-          "tu_analisis": "Si los inventarios bajan (número negativo), hay menos oferta de petróleo. Petróleo sube → presión inflacionaria → Oro podría subir como hedge. Si los inventarios suben (número positivo), petróleo baja → menos presión inflacionaria → Oro podría bajar.",
-          "sesgo": "Inventarios negativos → LONG Oro | Inventarios positivos → SHORT Oro"
+          "hora": "07:30", "evento": "Pedidos de bienes duraderos (septiembre, preliminar)", "impacto": "medio",
+          "prevision": "0.6%", "anterior": "-0.1%", "fuente": "https://www.census.gov/manufacturing/m3/release_schedule.html",
+          "tu_analisis": "Este dato aparece en el calendario oficial del Census Bureau aunque no está en las capturas. El consenso visible de Investing es 0.6%. Una cifra fuerte puede apoyar dólar y rendimientos, pero el componente subyacente y la reacción de tasas importan más para el oro.",
+          "escenario_alcista": "Pedidos por debajo del consenso y rendimientos/dólar a la baja, con confirmación del oro.",
+          "escenario_bajista": "Pedidos por encima del consenso y rendimientos/dólar al alza, con confirmación del oro.",
+          "confirmacion": "Revisar también pedidos de bienes de capital excluyendo defensa y aeronaves si están disponibles.",
+          "invalidacion": "El dato principal puede ser volátil por aeronaves; no operar una sorpresa aislada sin confirmación de tasas.",
+          "confianza": "Media; consenso puede diferir entre proveedores.", "sesgo": "Condicional; consenso 0.6% de Investing, verificar el domingo."
+        },
+        {
+          "hora": "09:00", "evento": "Confianza del consumidor de The Conference Board (octubre)", "impacto": "medio",
+          "prevision": "80.5", "anterior": "81.9", "fuente": "https://www.conference-board.org/topics/consumer-confidence",
+          "tu_analisis": "La previsión apunta a menor confianza. Dato secundario para el oro; importa si cambia expectativas de crecimiento, tasas y dólar.",
+          "escenario_alcista": "Dato claramente menor al consenso, acompañado de caída del dólar y rendimientos: posible apoyo al oro.",
+          "escenario_bajista": "Dato claramente mayor al consenso, acompañado de alza del dólar y rendimientos: posible presión sobre el oro.",
+          "confirmacion": "Reacción conjunta de DXY y rendimientos; esperar cierre de vela de 5 minutos.",
+          "invalidacion": "Si el oro no confirma o dólar y rendimientos divergen, no tomar el dato como señal.",
+          "confianza": "Baja-media; impacto indirecto.", "sesgo": "Condicional, sin dirección anticipada."
+        },
+        {
+          "hora": "09:00", "evento": "Ventas de viviendas nuevas (septiembre)", "impacto": "medio",
+          "prevision": "649K", "anterior": "684K", "fuente": "https://www.census.gov/construction/nrs/",
+          "tu_analisis": "El consenso anticipa enfriamiento. Su efecto en el oro depende de si mueve las expectativas de tasas.",
+          "escenario_alcista": "Ventas claramente por debajo de 649K y caídas confirmadas en dólar y rendimientos.",
+          "escenario_bajista": "Ventas claramente por encima de 649K y alzas confirmadas en dólar y rendimientos.",
+          "confirmacion": "Se publica junto con confianza del consumidor; leer ambos resultados como bloque.",
+          "invalidacion": "Si los datos se contradicen o el oro no confirma, esperar.",
+          "confianza": "Baja-media; evento simultáneo.", "sesgo": "Condicional; no operar los datos por separado."
         }
       ]
     },
     "miercoles": {
-      "fecha": "2026-10-22",
+      "fecha": "2026-10-28",
       "noticias": [
         {
-          "hora": "07:30",
-          "evento": "Nuevas peticiones de subsidio por desempleo",
-          "impacto": "alto",
-          "prevision": "200K",
-          "anterior": "199K",
-          "tu_analisis": "Mercado laboral estable. Si viene alto (>200K), indica debilidad laboral → USD débil → Oro sube. Si viene bajo (<200K), mercado laboral fuerte → USD fuerte → Oro baja.",
-          "sesgo": "Si dato > 200K → LONG Oro/EURUSD | Si dato < 200K → SHORT Oro/EURUSD"
+          "hora": "09:30", "evento": "Inventarios de petróleo crudo de la EIA", "impacto": "medio",
+          "prevision": "-0.300M", "anterior": "-3.060M", "fuente": "https://www.eia.gov/petroleum/supply/weekly/",
+          "tu_analisis": "El efecto del petróleo sobre el oro es indirecto: un retiro puede elevar expectativas de inflación, pero también impulsar rendimientos.",
+          "escenario_alcista": "Retiro mayor al consenso y oro firme sin repunte desordenado de rendimientos reales.",
+          "escenario_bajista": "Acumulación inesperada, menor petróleo y menores expectativas de inflación.",
+          "confirmacion": "Observar petróleo, rendimientos y reacción sostenida del oro.",
+          "invalidacion": "No inferir dirección del oro solo por los inventarios de crudo.",
+          "confianza": "Baja; relación indirecta.", "sesgo": "No operar de forma aislada."
+        },
+        {
+          "hora": "13:00", "evento": "Decisión de tasas de la Reserva Federal (FOMC)", "impacto": "alto",
+          "prevision": "4.00% (según las capturas)", "anterior": "4.00%", "fuente": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm",
+          "tu_analisis": "El consenso de las capturas espera que la tasa se mantenga. El comunicado y la guía sobre próximos recortes pueden pesar más que el nivel.",
+          "escenario_alcista": "Tono más dovish de lo esperado, menor trayectoria implícita de tasas y caída de rendimientos reales y dólar.",
+          "escenario_bajista": "Tono más hawkish, menos recortes esperados y alza de rendimientos reales y dólar.",
+          "confirmacion": "Esperar comunicado y rueda de prensa; vigilar rendimientos reales, DXY y reacción sostenida del oro.",
+          "invalidacion": "No reaccionar solo al titular de tasa; si comunicado y rueda de prensa se contradicen, esperar.",
+          "confianza": "Alta relevancia; dirección incierta antes del comunicado.", "sesgo": "Sin sesgo direccional previo; evento principal."
+        },
+        {
+          "hora": "13:00", "evento": "Comunicado del FOMC", "impacto": "alto",
+          "prevision": "Sin consenso numérico", "anterior": "—", "fuente": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm",
+          "tu_analisis": "Leer cambios sobre inflación, empleo y balance de riesgos junto con la guía de tasas.",
+          "escenario_alcista": "Más preocupación por desaceleración o disposición a recortar antes, con caída de rendimientos reales y dólar.",
+          "escenario_bajista": "Énfasis en inflación persistente o tasas altas por más tiempo, con alza de rendimientos reales y dólar.",
+          "confirmacion": "Comparar el texto con el comunicado anterior y validar con bonos, dólar y oro.",
+          "invalidacion": "Una frase aislada no basta; esperar la rueda de prensa y confirmación del precio.",
+          "confianza": "Alta relevancia; interpretación cualitativa.", "sesgo": "Esperar lectura completa."
+        },
+        {
+          "hora": "13:30", "evento": "Rueda de prensa del FOMC", "impacto": "alto",
+          "prevision": "Sin consenso numérico", "anterior": "—", "fuente": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm",
+          "tu_analisis": "Las respuestas del presidente pueden reforzar o cambiar la lectura inicial del comunicado.",
+          "escenario_alcista": "Respuestas dovish que reduzcan la senda esperada de tasas, con caída de rendimientos reales y dólar.",
+          "escenario_bajista": "Respuestas hawkish que eleven la senda esperada de tasas, con alza de rendimientos reales y dólar.",
+          "confirmacion": "Esperar reacción posterior a las respuestas; evitar movimientos erráticos por titulares.",
+          "invalidacion": "Si contradice el comunicado, tratar la primera reacción como no confirmada.",
+          "confianza": "Alta relevancia; volatilidad elevada.", "sesgo": "Esperar confirmación tras la rueda de prensa."
         }
       ]
     },
     "jueves": {
-      "fecha": "2026-10-23",
+      "fecha": "2026-10-29",
       "noticias": [
         {
-          "hora": "08:45",
-          "evento": "PMI de servicios (Oct)",
-          "impacto": "alto",
-          "prevision": "58.0",
-          "anterior": "58.8",
-          "tu_analisis": "PMI > 50 = expansión, PMI < 50 = contracción. Si viene bajo (<58), sector servicios se desacelera → economía débil → USD baja → Oro sube. Si viene alto (>58), economía fuerte → USD sube → Oro baja.",
-          "sesgo": "Si dato < 58 → LONG Oro/EURUSD | Si dato > 58 → SHORT Oro/EURUSD"
+          "hora": "07:30", "evento": "PCE subyacente mensual (septiembre)", "impacto": "alto",
+          "prevision": "0.3%", "anterior": "0.2%", "fuente": "https://www.bea.gov/news/schedule/",
+          "tu_analisis": "Indicador de inflación preferido por la Fed y llega el día después de su decisión. La sorpresa y el tono del FOMC condicionan la lectura.",
+          "escenario_alcista": "PCE claramente menor a 0.3%, con caída confirmada de rendimientos reales y dólar.",
+          "escenario_bajista": "PCE claramente mayor a 0.3%, con alza confirmada de rendimientos reales y dólar.",
+          "confirmacion": "Evaluar mensual y anual junto con PIB, deflactor y rendimientos.",
+          "invalidacion": "Si las medidas de inflación o la reacción del mercado se contradicen, esperar.",
+          "confianza": "Alta relevancia; posible señal cruzada con PIB y FOMC.", "sesgo": "Condicional a sorpresa y reacción de tasas."
         },
         {
-          "hora": "08:45",
-          "evento": "PMI manufacturero (Oct)",
-          "impacto": "alto",
-          "prevision": "55.5",
-          "anterior": "55.9",
-          "tu_analisis": "Manufactura en expansión pero desacelerando. Si viene bajo (<55.5), manufactura débil → economía en desaceleración → USD baja → Oro sube. Si viene alto (>55.5), manufactura fuerte → USD sube → Oro baja.",
-          "sesgo": "Si dato < 55.5 → LONG Oro/EURUSD | Si dato > 55.5 → SHORT Oro/EURUSD"
+          "hora": "07:30", "evento": "PCE subyacente anual (septiembre)", "impacto": "alto",
+          "prevision": "3.1%", "anterior": "3.0%", "fuente": "https://www.bea.gov/news/schedule/",
+          "tu_analisis": "La previsión apunta a aceleración anual. Importa si cambia las expectativas de política monetaria.",
+          "escenario_alcista": "Resultado menor al consenso y caída confirmada de rendimientos reales y dólar.",
+          "escenario_bajista": "Resultado mayor al consenso y alza confirmada de rendimientos reales y dólar.",
+          "confirmacion": "Leer en conjunto con variación mensual y deflactor del PIB.",
+          "invalidacion": "No usar la tasa anual sin revisar el dato mensual ni la reacción del mercado.",
+          "confianza": "Alta relevancia; consenso tomado de Investing.", "sesgo": "Condicional, no direccional por sí solo."
+        },
+        {
+          "hora": "07:30", "evento": "PIB de EE. UU. (estimación avanzada, tercer trimestre)", "impacto": "alto",
+          "prevision": "3.2%", "anterior": "2.2%", "fuente": "https://www.bea.gov/news/schedule/",
+          "tu_analisis": "Crecimiento fuerte puede sostener tasas y dólar; dato débil puede elevar expectativas de recortes. Precios y consumo pueden cambiar la lectura.",
+          "escenario_alcista": "PIB débil con señales de desinflación, rendimientos reales y dólar a la baja.",
+          "escenario_bajista": "PIB fuerte y componentes de precios firmes, rendimientos reales y dólar al alza.",
+          "confirmacion": "Revisar PIB, consumo y deflactor; se publica simultáneamente con PCE.",
+          "invalidacion": "Si crecimiento y precios apuntan en sentidos distintos, esperar confirmación en bonos y oro.",
+          "confianza": "Alta relevancia; lectura conjunta compleja.", "sesgo": "No interpretar el PIB aislado del deflactor y PCE."
+        },
+        {
+          "hora": "07:30", "evento": "Nuevas peticiones de subsidio por desempleo", "impacto": "medio",
+          "prevision": "198K", "anterior": "194K", "fuente": "https://www.dol.gov/ui/data.pdf",
+          "tu_analisis": "Dato laboral semanal secundario publicado a la vez que PIB y PCE.",
+          "escenario_alcista": "Solicitudes claramente mayores a 198K y dólar y rendimientos a la baja.",
+          "escenario_bajista": "Solicitudes claramente menores a 198K y dólar y rendimientos al alza.",
+          "confirmacion": "Usar como elemento secundario del conjunto macroeconómico del jueves.",
+          "invalidacion": "No operar solicitudes por separado debido a la coincidencia con PIB y PCE.",
+          "confianza": "Baja-media; publicación simultánea.", "sesgo": "Secundario y condicionado a confirmación."
         }
       ]
     },
     "viernes": {
-      "fecha": "2026-10-24",
-      "noticias": []
+      "fecha": "2026-10-30",
+      "noticias": [
+        {
+          "hora": "07:30", "evento": "Índice de costo del empleo (ECI), tercer trimestre", "impacto": "alto",
+          "prevision": "0.8%", "anterior": "0.9%", "fuente": "https://www.bls.gov/schedule/news_release/eci.htm",
+          "tu_analisis": "Mide presión salarial y puede influir en las expectativas de inflación y tasas. Consenso tomado de Forex Factory.",
+          "escenario_alcista": "ECI menor a 0.8% y rendimientos reales y dólar a la baja.",
+          "escenario_bajista": "ECI mayor a 0.8% y rendimientos reales y dólar al alza.",
+          "confirmacion": "Comparar con el mensaje de la Fed y observar rendimientos reales, DXY y reacción del oro.",
+          "invalidacion": "Si ya estaba descontado o el oro no confirma, no perseguir el primer movimiento.",
+          "confianza": "Media-alta; dato de costos laborales relevante para inflación.", "sesgo": "Condicional a la sorpresa."
+        }
+      ]
     },
-    "sabado": {
-      "fecha": "2026-10-25",
-      "noticias": []
-    },
-    "domingo": {
-      "fecha": "2026-10-26",
-      "noticias": []
-    }
+    "sabado": {"fecha": "2026-10-31", "noticias": []},
+    "domingo": {"fecha": "2026-11-01", "noticias": []}
   }
 }

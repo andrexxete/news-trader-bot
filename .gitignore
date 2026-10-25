@@ -1,0 +1,12 @@
+# Python bytecode and test caches
+__pycache__/
+*.py[cod]
+
+# Local environment and secrets
+.env
+venv/
+.venv/
+
+# Runtime state created by the bot
+forecast_history.jsonl
+alert_state.json
