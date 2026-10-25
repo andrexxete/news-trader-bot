@@ -2,8 +2,10 @@ name: News Trader Bot
 
 on:
   schedule:
-    # Todos los días a las 07:00 AM Colombia (12:00 UTC) - Lunes a Viernes
+    # Resumen diario a las 07:00 AM Colombia, lunes a viernes.
     - cron: '0 12 * * 1-5'
+    # Busca noticias próximas durante la sesión de EE. UU. (hora de Colombia).
+    - cron: '*/15 11-20 * * 1-5'
   
   workflow_dispatch:
     inputs:
@@ -39,5 +41,10 @@ jobs:
         echo "TELEGRAM_TOKEN=${{ secrets.TELEGRAM_TOKEN }}" > .env
         echo "TELEGRAM_CHAT_ID=${{ secrets.TELEGRAM_CHAT_ID }}" >> .env
     
-    - name: Run daily summary
+    - name: Send daily summary
+      if: ${{ (github.event_name == 'schedule' && github.event.schedule == '0 12 * * 1-5') || (github.event_name == 'workflow_dispatch' && github.event.inputs.modo == 'resumen') }}
       run: python main.py resumen
+
+    - name: Send pre-release alerts
+      if: ${{ (github.event_name == 'schedule' && github.event.schedule == '*/15 11-20 * * 1-5') || (github.event_name == 'workflow_dispatch' && github.event.inputs.modo == 'alerta') }}
+      run: python main.py alerta
